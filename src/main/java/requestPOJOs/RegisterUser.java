@@ -1,4 +1,4 @@
-package requests;
+package requestPOJOs;
 
 public class RegisterUser {
     private String email;

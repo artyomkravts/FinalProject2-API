@@ -17,4 +17,19 @@ public class UserChecks {
                 .and()
                 .body("success", Matchers.equalTo(false));
     }
+
+    public static void check401AndSuccessFalse(Response response) {
+        response.then().log().all()
+                .statusCode(HTTP_UNAUTHORIZED)
+                .and()
+                .body("success", Matchers.equalTo(false));
+    }
+
+    public static void check200AndReturnsAccessToken(Response response) {
+        response.then().log().all()
+                .statusCode(HTTP_OK)
+                .and()
+                .extract()
+                .path("accessToken");
+    }
 }

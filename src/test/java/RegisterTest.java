@@ -11,7 +11,10 @@ public class RegisterTest {
     @Before
     public void setUp() {
         Faker eng = new Faker(Locale.US);
-        user = new RegisterUser(eng.internet().emailAddress(), eng.bothify("?????#####???###"), eng.name().firstName());
+        var email = eng.internet().emailAddress();
+        var password = eng.bothify("?????#####???###");
+        var name = eng.name().firstName();
+        user = new RegisterUser(email, password, name);
     }
 
     @Test

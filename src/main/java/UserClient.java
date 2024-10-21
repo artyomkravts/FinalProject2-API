@@ -25,4 +25,13 @@ public class UserClient {
                 .when()
                 .post(Constants.BASE_URI + "/api/auth/login");
     }
+
+    public static Response patchUserData(RegisterUser user, String accessToken) {
+        return given()
+                .auth().oauth2(accessToken)
+                .contentType(ContentType.JSON)
+                .and()
+                .body(user)
+                .patch(Constants.BASE_URI  + "/api/auth/user");
+    }
 }

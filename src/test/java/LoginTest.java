@@ -5,27 +5,20 @@ import org.junit.Test;
 import requestPOJOs.LoginUser;
 import requestPOJOs.RegisterUser;
 
-import java.util.Locale;
-
 public class LoginTest {
 
-    private LoginUser loginUser;
-    private String email;
-    private String password;
+    private RegisterUser user;
 
     @Before
     public void setUp() {
-        RegisterUser user;
-        Faker eng = new Faker(Locale.US);
-        email = eng.internet().emailAddress();
-        password = eng.bothify("?????#####???###");
-        user = new RegisterUser(email, password, eng.name().firstName());
+        user = DataGenerator.getRandomRegisterUser();
+
         UserClient.registerUser(user);
     }
 
     @Test
     public void loginValidUserReturnsOkAndAccessToken() {
-        LoginUser loginUser = new LoginUser(email, password);
+        LoginUser loginUser = new LoginUser(user.getEmail(), user.getPassword());
 
         Response response = UserClient.logInUser(loginUser);
 
@@ -36,7 +29,7 @@ public class LoginTest {
     public void loginInvalidUserReturns401AndSuccessFalse() {
         Faker f = new Faker();
         String randomString = f.letterify("?????");
-        LoginUser loginUser = new LoginUser(randomString + email, randomString + password);
+        LoginUser loginUser = new LoginUser(randomString + user.getEmail(), randomString + user.getPassword());
 
         Response response = UserClient.logInUser(loginUser);
 

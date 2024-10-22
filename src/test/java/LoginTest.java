@@ -1,5 +1,6 @@
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import requestPOJOs.LoginUser;
@@ -8,12 +9,20 @@ import requestPOJOs.RegisterUser;
 public class LoginTest {
 
     private RegisterUser user;
+    private String accessToken;
 
     @Before
     public void setUp() {
         user = DataGenerator.getRandomRegisterUser();
 
-        UserClient.registerUser(user);
+        Response response = UserClient.registerUser(user);
+
+        accessToken = UserClient.getAccessTokenWithoutBearer(response);
+    }
+
+    @After
+    public void tearDown() {
+        UserClient.deleteUser(accessToken);
     }
 
     @Test

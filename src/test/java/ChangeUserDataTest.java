@@ -1,5 +1,6 @@
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import requestPOJOs.LoginUser;
@@ -10,19 +11,16 @@ import static io.restassured.RestAssured.given;
 public class ChangeUserDataTest {
     private static RegisterUser user;
     private static String accessToken;
-    private String refreshToken;
     @Before
     public void setUp() {
         Response response = UserClient.registerUser(DataGenerator.getRandomRegisterUser());
 
-        accessToken = response.then().log().all()
-                .extract()
-                .path("accessToken");
-        accessToken = accessToken.replace("Bearer ", "");
+        accessToken = UserClient.getAccessTokenWithoutBearer(response);
+    }
 
-        refreshToken = response.then()
-                .extract()
-                .path("refreshToken");
+    @After
+    public void tearDown() {
+        UserClient.deleteUser(accessToken);
     }
 
     @Test

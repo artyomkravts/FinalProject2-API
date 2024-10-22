@@ -84,4 +84,12 @@ public class UserChecks {
                 .and()
                 .body("order.owner.name", Matchers.equalTo(user.getName()));
     }
+
+    @Step("Check 200 and list of orders")
+    public static void check200AndListOfOrders(Response response) {
+        response.then().log().all()
+                .statusCode(HTTP_OK)
+                .and()
+                .body("orders", Matchers.notNullValue());
+    }
 }

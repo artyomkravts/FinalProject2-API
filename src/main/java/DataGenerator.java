@@ -23,15 +23,17 @@ public class DataGenerator {
         Random random = new Random();
         Response response = UserClient.getIngredients();
 
-        int ingredientCount = response.jsonPath().getList("data").size();
+        int ingredientsToAdd = random.nextInt(9) + 2;       // добавить в заказ от 2 до 10 ингредиентов
+        int ingredientsTotal = response.jsonPath().getList("data").size();
 
-        for (int i = 0; i < random.nextInt(9) + 2; i++) {  // добавить в заказ от 2 до 10 ингредиентов
-            int j = random.nextInt(ingredientCount);             // выбрать случайный ингредиент из имеющихся
-            String ingredientId = response.then().log().all()
+        for (int i = 0; i < ingredientsToAdd; i++) {
+            int j = random.nextInt(ingredientsTotal);              // выбрать случайный ингредиент из имеющихся
+            String ingredientId = response.then()
                     .extract()
                     .path("data["+ j +"]._id");
             order.addIngredients(ingredientId);
         }
+        System.out.println("*\n*\n*\nNumber of ingredients added: " + ingredientsToAdd + "\n*\n*\n*");
         return order;
     }
 

@@ -73,4 +73,12 @@ public class UserClient {
                 .when()
                 .post(Constants.BASE_URI + Constants.ORDERS_PATH);
     }
+
+    @Step("Get order by access token")
+    public static Response getOrder(String accessToken) {
+        return given().log().all()
+                .auth().oauth2(accessToken)
+                .when()
+                .get(Constants.BASE_URI + Constants.ORDERS_PATH);
+    }
 }

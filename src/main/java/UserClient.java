@@ -3,6 +3,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import requestPOJOs.LoginUser;
+import requestPOJOs.Order;
 import requestPOJOs.RegisterUser;
 
 import static io.restassured.RestAssured.given;
@@ -53,5 +54,23 @@ public class UserClient {
         if (accessToken != null) {
             return accessToken.replace("Bearer ", "");
         } else return null;
+    }
+
+    @Step("Get ingredients")
+    public static Response getIngredients() {
+        return given().log().all()
+                .when()
+                .get(Constants.BASE_URI + Constants.INGREDIENTS_PATH);
+    }
+
+    @Step("Create order")
+    public static Response createOrder(Order order, String accessToken) {
+        return given().log().all()
+                .auth().oauth2(accessToken)
+                .contentType(ContentType.JSON)
+                .and()
+                .body(order)
+                .when()
+                .post(Constants.BASE_URI + Constants.ORDERS_PATH);
     }
 }

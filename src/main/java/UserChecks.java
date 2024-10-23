@@ -40,7 +40,7 @@ public class UserChecks {
     }
 
     @Step("Check 200 and changed email and name")
-    public static void check200AndChangedEmailName(Response response, String email, String name) {
+    public static void check200AndChangedEmailAndName(Response response, String email, String name) {
         response.then().log().all()
                 .statusCode(HTTP_OK)
                 .and()

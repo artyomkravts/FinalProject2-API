@@ -25,12 +25,12 @@ public class ChangeUserDataTest {
 
     @Test
     @DisplayName("Patch user (email, password, name) and check that email and name changed")
-    public void patchUserAllFieldsReturnsOkAndChangedEmailName() {
+    public void patchUserAllFieldsReturnsOkAndChangedEmailAndName() {
         user = DataGenerator.getRandomRegisterUser();
 
         Response response = UserClient.patchUserData(user, accessToken);
 
-        UserChecks.check200AndChangedEmailName(response, user.getEmail(), user.getName());
+        UserChecks.check200AndChangedEmailAndName(response, user.getEmail(), user.getName());
     }
 
     @Test

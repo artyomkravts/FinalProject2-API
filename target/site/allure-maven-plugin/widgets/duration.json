@@ -1,150 +1,150 @@
 [ {
-  "uid" : "7f6f4017fe8c1c26",
-  "name" : "Create order without auth successful",
-  "time" : {
-    "start" : 1729757615160,
-    "stop" : 1729757617438,
-    "duration" : 2278
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "6cf6423113004525",
-  "name" : "Register valid user successful",
-  "time" : {
-    "start" : 1729757634327,
-    "stop" : 1729757635369,
-    "duration" : 1042
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "d4a6d0cfbb6bfe18",
-  "name" : "Login invalid user failed",
-  "time" : {
-    "start" : 1729757630061,
-    "stop" : 1729757631356,
-    "duration" : 1295
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "1918440c6bdbc797",
-  "name" : "Register user without email forbidden",
-  "time" : {
-    "start" : 1729757635384,
-    "stop" : 1729757635956,
-    "duration" : 572
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "19b07a19a66eab10",
-  "name" : "Login valid user successful",
-  "time" : {
-    "start" : 1729757631359,
-    "stop" : 1729757632829,
-    "duration" : 1470
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "1569f03df66821fc",
-  "name" : "Register 2 valid users forbidden",
-  "time" : {
-    "start" : 1729757632835,
-    "stop" : 1729757634326,
-    "duration" : 1491
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "ba8a1d0b41e1636c",
-  "name" : "Create order without auth && without ingredients failed",
-  "time" : {
-    "start" : 1729757621978,
-    "stop" : 1729757623098,
-    "duration" : 1120
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "9bf64e9f04007faf",
-  "name" : "Patch user (all fields sent) successful",
-  "time" : {
-    "start" : 1729757604400,
-    "stop" : 1729757610434,
-    "duration" : 6034
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "942541d4c8497d9b",
-  "name" : "Get order with valid auth successful",
-  "time" : {
-    "start" : 1729757623107,
-    "stop" : 1729757626826,
-    "duration" : 3719
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "a8c910b09cfa45d",
-  "name" : "Create order with invalid ingredients failed",
-  "time" : {
-    "start" : 1729757613628,
-    "stop" : 1729757615157,
-    "duration" : 1529
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "cbae306d115ca785",
-  "name" : "Patch user (all fields sent) successful",
-  "time" : {
-    "start" : 1729757612097,
-    "stop" : 1729757613619,
-    "duration" : 1522
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "bac599b3347250e9",
-  "name" : "Get order without auth failed",
-  "time" : {
-    "start" : 1729757626830,
-    "stop" : 1729757630056,
-    "duration" : 3226
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "813c6c2f551c1976",
+  "uid" : "6dd246a5be00f3fa",
   "name" : "Create order with auth successful",
   "time" : {
-    "start" : 1729757618731,
-    "stop" : 1729757621974,
-    "duration" : 3243
+    "start" : 1729776930624,
+    "stop" : 1729776935347,
+    "duration" : 4723
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "5a08f0e30fc7d61b",
+  "uid" : "eb53b76ba9978ee5",
+  "name" : "Register user without email forbidden",
+  "time" : {
+    "start" : 1729776950329,
+    "stop" : 1729776951009,
+    "duration" : 680
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6de358edd633407",
+  "name" : "Create order with invalid ingredients failed",
+  "time" : {
+    "start" : 1729776925867,
+    "stop" : 1729776927467,
+    "duration" : 1600
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b97d887a294cfebe",
+  "name" : "Get order without auth failed",
+  "time" : {
+    "start" : 1729776941441,
+    "stop" : 1729776944676,
+    "duration" : 3235
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6293eea8c94cbb1d",
+  "name" : "Register 2 valid users forbidden",
+  "time" : {
+    "start" : 1729776947664,
+    "stop" : 1729776949102,
+    "duration" : 1438
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8c4fbaf54383af07",
   "name" : "Patch user (all fields sent) without authorization failed",
   "time" : {
-    "start" : 1729757610628,
-    "stop" : 1729757612057,
-    "duration" : 1429
+    "start" : 1729776922313,
+    "stop" : 1729776924368,
+    "duration" : 2055
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "90fad044dc9a89ba",
+  "uid" : "bea29be53bbce50b",
+  "name" : "Login invalid user failed",
+  "time" : {
+    "start" : 1729776944679,
+    "stop" : 1729776946113,
+    "duration" : 1434
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "57f23c5a281c10a4",
+  "name" : "Create order without auth && without ingredients failed",
+  "time" : {
+    "start" : 1729776935352,
+    "stop" : 1729776937009,
+    "duration" : 1657
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "884826e11cdf638",
+  "name" : "Create order without auth successful",
+  "time" : {
+    "start" : 1729776927469,
+    "stop" : 1729776929095,
+    "duration" : 1626
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "63d31bf32180ca96",
+  "name" : "Patch user (all fields sent) successful",
+  "time" : {
+    "start" : 1729776924380,
+    "stop" : 1729776925861,
+    "duration" : 1481
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "83c5affa9a7610a0",
   "name" : "Create order without ingredients failed",
   "time" : {
-    "start" : 1729757617445,
-    "stop" : 1729757618728,
-    "duration" : 1283
+    "start" : 1729776929097,
+    "stop" : 1729776930621,
+    "duration" : 1524
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "65c28f9eaac20554",
+  "name" : "Get order with valid auth successful",
+  "time" : {
+    "start" : 1729776937012,
+    "stop" : 1729776941437,
+    "duration" : 4425
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f8567bf8e4742305",
+  "name" : "Patch user (all fields sent) successful",
+  "time" : {
+    "start" : 1729776916082,
+    "stop" : 1729776922258,
+    "duration" : 6176
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2c654b4f9f9d42b1",
+  "name" : "Login valid user successful",
+  "time" : {
+    "start" : 1729776946118,
+    "stop" : 1729776947652,
+    "duration" : 1534
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "84706879134bf899",
+  "name" : "Register valid user successful",
+  "time" : {
+    "start" : 1729776949105,
+    "stop" : 1729776950316,
+    "duration" : 1211
   },
   "status" : "passed",
   "severity" : "normal"

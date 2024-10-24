@@ -1,3 +1,4 @@
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
@@ -26,6 +27,10 @@ public class GetOrdersTest {
 
     @After
     public void tearDown() {
+        Allure.parameter("user", user);
+        Allure.parameter("order", order);
+        Allure.parameter("accessToken", accessToken);
+
         UserClient.deleteUser(accessToken);
     }
 
@@ -42,7 +47,8 @@ public class GetOrdersTest {
     @DisplayName("Get order without auth failed")
     @Description("Negative test checks 401 and that response returns error message - success: false")
     public void getOrdersNoAuthReturns401AndSuccessFalse() {
-        Response response = UserClient.getOrder("");
+        accessToken = "";
+        Response response = UserClient.getOrder(accessToken);
 
         UserChecks.check401AndSuccessFalse(response);
     }

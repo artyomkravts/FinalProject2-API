@@ -1,4 +1,5 @@
 import com.github.javafaker.Faker;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
@@ -24,6 +25,9 @@ public class LoginTest {
 
     @After
     public void tearDown() {
+        Allure.parameter("user", user);
+        Allure.parameter("accessToken", accessToken);
+
         UserClient.deleteUser(accessToken);
     }
 

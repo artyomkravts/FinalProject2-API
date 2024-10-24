@@ -6,8 +6,6 @@ import requestPOJOs.RegisterUser;
 import java.util.Locale;
 import java.util.Random;
 
-import static io.restassured.RestAssured.given;
-
 public class DataGenerator {
     static Faker eng = new Faker(Locale.US);
     public static RegisterUser getRandomRegisterUser() {

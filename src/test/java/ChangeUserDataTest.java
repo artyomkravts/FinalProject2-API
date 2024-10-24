@@ -1,3 +1,4 @@
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
@@ -6,8 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 import requestPOJOs.LoginUser;
 import requestPOJOs.RegisterUser;
-
-import static io.restassured.RestAssured.given;
 
 public class ChangeUserDataTest {
     private static RegisterUser user;
@@ -21,6 +20,9 @@ public class ChangeUserDataTest {
 
     @After
     public void tearDown() {
+        Allure.parameter("user", user.toString());
+        Allure.parameter("accessToken", accessToken);
+
         UserClient.deleteUser(accessToken);
     }
 

@@ -1,3 +1,4 @@
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
@@ -8,16 +9,16 @@ import requestPOJOs.RegisterUser;
 
 public class RegisterTest {
     private RegisterUser user;
-    private String accessToken;
     private Response response;
     @Before
     public void setUp() {
-        accessToken = null;
         user = DataGenerator.getRandomRegisterUser();
     }
     @After
     public void tearDown() {
-        accessToken = UserClient.getAccessTokenWithoutBearer(response);
+        Allure.parameter("user", user);
+
+        String accessToken = UserClient.getAccessTokenWithoutBearer(response);
         if (accessToken != null) {
             UserClient.deleteUser(accessToken);
         }

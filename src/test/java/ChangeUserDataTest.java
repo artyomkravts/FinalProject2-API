@@ -1,18 +1,16 @@
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
-import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
+
 import org.junit.Rule;
 import org.junit.Test;
+
 import org.junit.rules.ErrorCollector;
 import requestPOJOs.LoginUser;
 import requestPOJOs.RegisterUser;
-
-import static java.net.HttpURLConnection.HTTP_OK;
-import static org.hamcrest.CoreMatchers.*;
 
 public class ChangeUserDataTest {
     private static RegisterUser user;
@@ -46,10 +44,7 @@ public class ChangeUserDataTest {
         Response response = UserClient.patchUserData(user, accessToken);
 
         // Использую Soft Assertion, потому что нужно проверить больше 1 поля
-        logTestStep("Check 1) status code 200; 2) email matches user data; 3) name matches user data");
-        collector.checkThat("Status code is incorrect", response.getStatusCode(), is(HTTP_OK));
-        collector.checkThat("Email is incorrect", response.path("user.email"), is(user.getEmail()));
-        collector.checkThat("Name is incorrect", response.path("user.name"), is(user.getName()));
+        UserChecks.softCheckStatusOkAndEmailAndNameMatchUserData(collector, response, user.getEmail(), user.getName());
     }
 
     @Test
@@ -60,15 +55,11 @@ public class ChangeUserDataTest {
 
         Response response = UserClient.patchUserData(user, accessToken);
 
-        logTestStep("Check 1) status code 200; 2) response message - success: true");
-        collector.checkThat("Patch user data failed", response.getStatusCode(), is(HTTP_OK));
-        collector.checkThat("Patch user data failed", response.path("success"), is(true));
+        UserChecks.softCheck200AndStatusSuccess(collector, response);
 
         Response response1 = UserClient.logInUser(new LoginUser(user.getEmail(), user.getPassword()));
 
-        logTestStep("Check 1) status code 200; 2) response message - success: true");
-        collector.checkThat("Log In user failed", response.getStatusCode(), is(HTTP_OK));
-        collector.checkThat("Log In user failed", response.path("success"), is(true));
+        UserChecks.softCheck200AndStatusSuccess(collector, response1);
     }
 
     @Test
@@ -80,11 +71,6 @@ public class ChangeUserDataTest {
         Response response = UserClient.patchUserData(user, "");
 
         UserChecks.check401AndSuccessFalse(response);
-    }
-
-    @Step("{message}")
-    private void logTestStep(String message) {
-        Allure.step(message);
     }
 
 }

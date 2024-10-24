@@ -1,0 +1,151 @@
+[ {
+  "uid" : "65997f31494d3eb1",
+  "name" : "Patch user (all fields sent) successful",
+  "time" : {
+    "start" : 1729677483955,
+    "stop" : 1729677485621,
+    "duration" : 1666
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2264f4a60db5f88e",
+  "name" : "Create order without auth successful",
+  "time" : {
+    "start" : 1729677487202,
+    "stop" : 1729677489238,
+    "duration" : 2036
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "58a5e95d8e701a98",
+  "name" : "Create order without auth && without ingredients failed",
+  "time" : {
+    "start" : 1729677494016,
+    "stop" : 1729677495354,
+    "duration" : 1338
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e13aa6f33940c3ca",
+  "name" : "Login valid user successful",
+  "time" : {
+    "start" : 1729677504248,
+    "stop" : 1729677505689,
+    "duration" : 1441
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a5adc90c2a81b1bf",
+  "name" : "Create order with invalid ingredients failed",
+  "time" : {
+    "start" : 1729677485625,
+    "stop" : 1729677487200,
+    "duration" : 1575
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4aa6102746179b",
+  "name" : "Register 2 valid users forbidden",
+  "time" : {
+    "start" : 1729677505692,
+    "stop" : 1729677507232,
+    "duration" : 1540
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "86a4600fb32182ae",
+  "name" : "Create order with auth successful",
+  "time" : {
+    "start" : 1729677490681,
+    "stop" : 1729677494011,
+    "duration" : 3330
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "77200eb937567330",
+  "name" : "Patch user (all fields sent) without authorization failed",
+  "time" : {
+    "start" : 1729677482494,
+    "stop" : 1729677483946,
+    "duration" : 1452
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a38fc6659b09a226",
+  "name" : "Login invalid user failed",
+  "time" : {
+    "start" : 1729677502748,
+    "stop" : 1729677504244,
+    "duration" : 1496
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f5b81d7dcdb23df0",
+  "name" : "Register user without email forbidden",
+  "time" : {
+    "start" : 1729677508326,
+    "stop" : 1729677509190,
+    "duration" : 864
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "eedfa68d36955e3a",
+  "name" : "Register valid user successful",
+  "time" : {
+    "start" : 1729677507235,
+    "stop" : 1729677508313,
+    "duration" : 1078
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "651af1283ce926ac",
+  "name" : "Get order with valid auth successful",
+  "time" : {
+    "start" : 1729677495356,
+    "stop" : 1729677499198,
+    "duration" : 3842
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "dda53247f3054a7e",
+  "name" : "Create order without ingredients failed",
+  "time" : {
+    "start" : 1729677489240,
+    "stop" : 1729677490679,
+    "duration" : 1439
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c74d35c0835f3670",
+  "name" : "Patch user (all fields sent) successful",
+  "time" : {
+    "start" : 1729677476308,
+    "stop" : 1729677482439,
+    "duration" : 6131
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f25189f3cb619f4",
+  "name" : "Get order without auth failed",
+  "time" : {
+    "start" : 1729677499199,
+    "stop" : 1729677502746,
+    "duration" : 3547
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

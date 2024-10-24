@@ -1,0 +1,159 @@
+{
+  "uid" : "a38fc6659b09a226",
+  "name" : "Login invalid user failed",
+  "fullName" : "LoginTest.loginInvalidUserReturns401AndSuccessFalse",
+  "historyId" : "d62d0ddabac574c3a6d3912a6df1c661",
+  "time" : {
+    "start" : 1729677502748,
+    "stop" : 1729677504244,
+    "duration" : 1496
+  },
+  "description" : "Negative test checks 401 and that response returns error message - success: false",
+  "descriptionHtml" : "<p>Negative test checks 401 and that response returns error message - success: false</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Negative test checks 401 and that response returns error message - success: false",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Register user",
+      "time" : {
+        "start" : 1729677502748,
+        "stop" : 1729677503237,
+        "duration" : 489
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "RegisterUser(email=dominic.okuneva@hotmail.com, password=mtiol34787dsn686, name=Wally)"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Get access token without 'Bearer ' part",
+      "time" : {
+        "start" : 1729677503237,
+        "stop" : 1729677503244,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "response",
+        "value" : "io.restassured.internal.RestAssuredResponseImpl@4dbbec7c"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Log in user",
+      "time" : {
+        "start" : 1729677503245,
+        "stop" : 1729677503625,
+        "duration" : 380
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "loginUser",
+        "value" : "LoginUser(email=rlcofdominic.okuneva@hotmail.com, password=rlcofmtiol34787dsn686)"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Check 401 and success false",
+      "time" : {
+        "start" : 1729677503625,
+        "stop" : 1729677503635,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "response",
+        "value" : "io.restassured.internal.RestAssuredResponseImpl@3e5703ce"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Delete user",
+      "time" : {
+        "start" : 1729677503635,
+        "stop" : 1729677504244,
+        "duration" : 609
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "accessToken",
+        "value" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MThjOGJmOWVkMjgwMDAxYjRlZjJhOCIsImlhdCI6MTcyOTY3NzUwMywiZXhwIjoxNzI5Njc4NzAzfQ.nzG9Xge6feXwz8kTPTa9oeznePKt4VQrbkqxa_v8j-M"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : true,
+    "stepsCount" : 5
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "LoginTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "loginInvalidUserReturns401AndSuccessFalse"
+  }, {
+    "name" : "suite",
+    "value" : "LoginTest"
+  }, {
+    "name" : "host",
+    "value" : "Artemin"
+  }, {
+    "name" : "thread",
+    "value" : "17988@Artemin.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a38fc6659b09a226.json",
+  "parameterValues" : [ ]
+}

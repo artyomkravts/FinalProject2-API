@@ -1,3 +1,4 @@
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.After;
@@ -24,7 +25,8 @@ public class ChangeUserDataTest {
     }
 
     @Test
-    @DisplayName("Patch user (email, password, name) and check that email and name changed")
+    @DisplayName("Patch user (all fields sent) successful")
+    @Description("Positive test checks 200 and that email and name changed")
     public void patchUserAllFieldsReturnsOkAndChangedEmailAndName() {
         user = DataGenerator.getRandomRegisterUser();
 
@@ -34,7 +36,8 @@ public class ChangeUserDataTest {
     }
 
     @Test
-    @DisplayName("Patch user (email, password, name) and check that password changed")
+    @DisplayName("Patch user (all fields sent) successful")
+    @Description("Positive test checks 200 and that password changed")
     public void patchUserAllFieldsReturnsOkAndChangedPassword() {
         user = DataGenerator.getRandomRegisterUser();
         Response response = UserClient.patchUserData(user, accessToken);
@@ -45,7 +48,8 @@ public class ChangeUserDataTest {
     }
 
     @Test
-    @DisplayName("Patch user (email, password, name) without authorization and check 401")
+    @DisplayName("Patch user (all fields sent) without authorization failed")
+    @Description("Negative test checks 401 and response - success: false")
     public void patchUserNoAuthReturnsUnauthorized() {
         user = DataGenerator.getRandomRegisterUser();
 

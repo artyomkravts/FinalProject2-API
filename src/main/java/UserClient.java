@@ -10,6 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class UserClient {
 
+    @Step("Register user")
     public static Response registerUser(RegisterUser user) {
         return
                 RestAssured.given().log().all()
@@ -20,6 +21,7 @@ public class UserClient {
                         .post(Constants.BASE_URI + Constants.REGISTER_PATH);
     }
 
+    @Step("Log in user")
     public static Response logInUser(LoginUser loginUser) {
         return given().log().all()
                 .contentType(ContentType.JSON)
@@ -29,6 +31,7 @@ public class UserClient {
                 .post(Constants.BASE_URI + Constants.LOGIN_PATH);
     }
 
+    @Step("Patch user data")
     public static Response patchUserData(RegisterUser user, String accessToken) {
         return given().log().all()
                 .auth().oauth2(accessToken)
@@ -39,6 +42,7 @@ public class UserClient {
                 .patch(Constants.BASE_URI  + Constants.USER_PATH);
     }
 
+    @Step("Delete user")
     public static Response deleteUser(String accessToken) {
         return given().log().all()
                 .auth().oauth2(accessToken)

@@ -1,4 +1,6 @@
 import com.github.javafaker.Faker;
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
@@ -26,6 +28,8 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Login valid user successful")
+    @Description("Positive test checks 200 and that response returns access token")
     public void loginValidUserReturnsOkAndAccessToken() {
         LoginUser loginUser = new LoginUser(user.getEmail(), user.getPassword());
 
@@ -35,6 +39,8 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Login invalid user failed")
+    @Description("Negative test checks 401 and that response returns error message - success: false")
     public void loginInvalidUserReturns401AndSuccessFalse() {
         Faker f = new Faker();
         String randomString = f.letterify("?????");

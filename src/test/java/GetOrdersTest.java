@@ -1,3 +1,5 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
@@ -28,6 +30,8 @@ public class GetOrdersTest {
     }
 
     @Test
+    @DisplayName("Get order with valid auth successful")
+    @Description("Positive test checks 200 and that response returns list of orders")
     public void getOrdersValidAuthReturnsOkAndListOfOrders() {
         Response response = UserClient.getOrder(accessToken);
 
@@ -35,6 +39,8 @@ public class GetOrdersTest {
     }
 
     @Test
+    @DisplayName("Get order without auth failed")
+    @Description("Negative test checks 401 and that response returns error message - success: false")
     public void getOrdersNoAuthReturns401AndSuccessFalse() {
         Response response = UserClient.getOrder("");
 

@@ -1,0 +1,162 @@
+{
+  "uid" : "77200eb937567330",
+  "name" : "Patch user (all fields sent) without authorization failed",
+  "fullName" : "ChangeUserDataTest.patchUserNoAuthReturnsUnauthorized",
+  "historyId" : "929480c3c78d916c7cc064271e4e8e6c",
+  "time" : {
+    "start" : 1729677482494,
+    "stop" : 1729677483946,
+    "duration" : 1452
+  },
+  "description" : "Negative test checks 401 and response - success: false",
+  "descriptionHtml" : "<p>Negative test checks 401 and response - success: false</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Negative test checks 401 and response - success: false",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Register user",
+      "time" : {
+        "start" : 1729677482494,
+        "stop" : 1729677482956,
+        "duration" : 462
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "RegisterUser(email=kyung.runolfsdottir@yahoo.com, password=swbxk70178omg760, name=Monet)"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Get access token without 'Bearer ' part",
+      "time" : {
+        "start" : 1729677482956,
+        "stop" : 1729677482967,
+        "duration" : 11
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "response",
+        "value" : "io.restassured.internal.RestAssuredResponseImpl@4b93c6bd"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Patch user data",
+      "time" : {
+        "start" : 1729677482967,
+        "stop" : 1729677483300,
+        "duration" : 333
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "RegisterUser(email=sherron.mann@yahoo.com, password=ttajx21911mrk523, name=Jesus)"
+      }, {
+        "name" : "accessToken",
+        "value" : ""
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Check 401 and success false",
+      "time" : {
+        "start" : 1729677483300,
+        "stop" : 1729677483310,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "response",
+        "value" : "io.restassured.internal.RestAssuredResponseImpl@1f3bb1f8"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Delete user",
+      "time" : {
+        "start" : 1729677483311,
+        "stop" : 1729677483945,
+        "duration" : 634
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "accessToken",
+        "value" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MThjOGFhOWVkMjgwMDAxYjRlZjI4ZCIsImlhdCI6MTcyOTY3NzQ4MiwiZXhwIjoxNzI5Njc4NjgyfQ.HteuSfp2rAIJZZLQ4OxKeasJKWyV0PXJxKO0tfUE_i8"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : true,
+    "stepsCount" : 5
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "ChangeUserDataTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "patchUserNoAuthReturnsUnauthorized"
+  }, {
+    "name" : "suite",
+    "value" : "ChangeUserDataTest"
+  }, {
+    "name" : "host",
+    "value" : "Artemin"
+  }, {
+    "name" : "thread",
+    "value" : "17988@Artemin.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "77200eb937567330.json",
+  "parameterValues" : [ ]
+}

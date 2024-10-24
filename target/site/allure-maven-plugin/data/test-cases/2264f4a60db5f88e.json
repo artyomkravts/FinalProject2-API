@@ -1,0 +1,177 @@
+{
+  "uid" : "2264f4a60db5f88e",
+  "name" : "Create order without auth successful",
+  "fullName" : "CreateOrderTest.createOrderWithoutAuthReturnsOkAndNoUserCreds",
+  "historyId" : "341cbf8a0d9a29fe8f745fa60ec85585",
+  "time" : {
+    "start" : 1729677487202,
+    "stop" : 1729677489238,
+    "duration" : 2036
+  },
+  "description" : "Positive test checks 200 and that response does NOT return user credentials",
+  "descriptionHtml" : "<p>Positive test checks 200 and that response does NOT return user credentials</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Positive test checks 200 and that response does NOT return user credentials",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Register user",
+      "time" : {
+        "start" : 1729677487203,
+        "stop" : 1729677487669,
+        "duration" : 466
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "RegisterUser(email=emerita.shields@hotmail.com, password=xxdls22527oih258, name=Yuk)"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Get access token without 'Bearer ' part",
+      "time" : {
+        "start" : 1729677487669,
+        "stop" : 1729677487679,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "response",
+        "value" : "io.restassured.internal.RestAssuredResponseImpl@62959d1d"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Get ingredients",
+      "time" : {
+        "start" : 1729677487679,
+        "stop" : 1729677488036,
+        "duration" : 357
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Create order",
+      "time" : {
+        "start" : 1729677488216,
+        "stop" : 1729677488596,
+        "duration" : 380
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "order",
+        "value" : "Order(ingredients=[61c0c5a71d1f82001bdaaa6f, 61c0c5a71d1f82001bdaaa7a, 61c0c5a71d1f82001bdaaa76, 61c0c5a71d1f82001bdaaa79, 61c0c5a71d1f82001bdaaa79, 61c0c5a71d1f82001bdaaa78, 61c0c5a71d1f82001bdaaa72, 61c0c5a71d1f82001bdaaa6f])"
+      }, {
+        "name" : "accessToken",
+        "value" : ""
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Check status 200, success: true, and no user credentials",
+      "time" : {
+        "start" : 1729677488596,
+        "stop" : 1729677488622,
+        "duration" : 26
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "response",
+        "value" : "io.restassured.internal.RestAssuredResponseImpl@6c07db8e"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    }, {
+      "name" : "Delete user",
+      "time" : {
+        "start" : 1729677488623,
+        "stop" : 1729677489237,
+        "duration" : 614
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "accessToken",
+        "value" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MThjOGFmOWVkMjgwMDAxYjRlZjI5NiIsImlhdCI6MTcyOTY3NzQ4NywiZXhwIjoxNzI5Njc4Njg3fQ.bfD2IQSHNYOEAlGki8apHGYgoYAFcr1UsS7VXlR3QvY"
+      } ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "hasContent" : true,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : true,
+    "stepsCount" : 6
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : ""
+  }, {
+    "name" : "testClass",
+    "value" : "CreateOrderTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "createOrderWithoutAuthReturnsOkAndNoUserCreds"
+  }, {
+    "name" : "suite",
+    "value" : "CreateOrderTest"
+  }, {
+    "name" : "host",
+    "value" : "Artemin"
+  }, {
+    "name" : "thread",
+    "value" : "17988@Artemin.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "2264f4a60db5f88e.json",
+  "parameterValues" : [ ]
+}

@@ -1,3 +1,5 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
@@ -25,6 +27,8 @@ public class CreateOrderTest {
     }
 
     @Test
+    @DisplayName("Create order with auth successful")
+    @Description("Positive test checks 200 and that response returns user credentials from the user's registration")
     public void createOrderWithValidAuthTokenReturnsOkAndUserCreds() {
         Order order = DataGenerator.getRandomOrder();
 
@@ -34,6 +38,8 @@ public class CreateOrderTest {
     }
 
     @Test
+    @DisplayName("Create order without auth successful")
+    @Description("Positive test checks 200 and that response does NOT return user credentials")
     public void createOrderWithoutAuthReturnsOkAndNoUserCreds() {
         Order order = DataGenerator.getRandomOrder();
 
@@ -43,6 +49,8 @@ public class CreateOrderTest {
     }
 
     @Test
+    @DisplayName("Create order without ingredients failed")
+    @Description("Negative test checks 400 and that response returns error message: ids must be provided")
     public void createOrderWithoutIngredientsReturns400AndErrorMessage() {
         Order order = new Order();
 
@@ -52,6 +60,8 @@ public class CreateOrderTest {
     }
 
     @Test
+    @DisplayName("Create order without auth && without ingredients failed")
+    @Description("Negative test checks 400 and that response returns error message: ids must be provided")
     public void createOrderWithoutAuthWithoutIngredientsReturns400AndErrorMessage() {
         Order order = new Order();
 
@@ -61,6 +71,8 @@ public class CreateOrderTest {
     }
 
     @Test
+    @DisplayName("Create order with invalid ingredients failed")
+    @Description("Negative test uses broken ingredient hashes and checks 500")
     public void createOrderWithInvalidIngredientsReturns500() {
         ArrayList<String> listOfInvalidIngredients = new ArrayList<>();
         listOfInvalidIngredients.add("invalidAbrakadabra");

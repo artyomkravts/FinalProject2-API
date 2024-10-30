@@ -1,31 +1,32 @@
-## Проект: Автоматические тесты API для сайта stellar burgers
+## Project: Automated API Tests for Stellar Burgers Website
 URL: https://stellarburgers.nomoreparties.site/
 
-### Используемый стек технологий
+### Technology Stack
 - Java
-- JUnit — для организации тестов
-- Rest-Assured — для тестирования REST API
-- Maven — управление зависимостями и сборка
-- Allure — для генерации отчетов
-- Hamcrest Matchers — для написания проверок
-- Java Faker, RandomStringUtils — для генерации случайных тестовых данных
-- POM (Page Object Model) — для упрощения взаимодействия с API и оптимизации структуры тестов
-- POJO — для передачи данных между запросами и ответами
+- JUnit
+- Rest-Assured
+- Maven
+- Allure
+- Hamcrest Matchers
+- Java Faker, RandomStringUtils 
+- POM (Page Object Model) 
+- POJO
 
-### Основные тест-кейсы
-  - Регистрация и авторизация пользователей
-  - Изменение данных пользователей
-  - Создание заказов с проверкой ингредиентов
-  - Проверка статусов и корректности ответов API
+### Main Test Cases
+- User registration and authentication
+- Updating user data
+- Order creation with ingredient validation
+- Status code and API response verification
 
-### Как установить и запустить
-1. Клонируйте репозиторий:  
+### Installation and Execution
+1. Clone the repository:  
 *git clone https://github.com/artyomkravts/FinalProject2-API.git*   
-2. Перейдите в папку проекта:  
-*cd <имя папки проекта>*   
-3. Выполните сборку проекта:  
+2. Navigate to the project folder:  
+*cd <project folder name>*   
+3. Build the project:  
 *mvn clean install*
-4. Запустите тесты:  
+4. Run the tests:  
 *mvn clean test*
-5. Сформируйте отчёт  
-*mvn allure:report* (или можно посмотреть готовый отчёт в папке site > index.html)
+5. Generate the report:   
+*mvn allure:report*   
+(or view the pre-generated report in the site folder > index.html)

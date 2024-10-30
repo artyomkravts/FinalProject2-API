@@ -1,4 +1,4 @@
-## Проект: Автоматические тесты API для сайта stellarburgers
+## Проект: Автоматические тесты API для сайта stellar burgers
 URL: https://stellarburgers.nomoreparties.site/
 
 ### Используемый стек технологий

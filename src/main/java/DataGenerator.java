@@ -1,14 +1,16 @@
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
+import lombok.experimental.UtilityClass;
 import requestPOJOs.Order;
 import requestPOJOs.RegisterUser;
 
 import java.util.Locale;
 import java.util.Random;
 
+@UtilityClass
 public class DataGenerator {
     static Faker eng = new Faker(Locale.US);
-    public static RegisterUser getRandomRegisterUser() {
+    public RegisterUser getRandomRegisterUser() {
         var email = eng.internet().emailAddress();
         var password = eng.bothify("?????#####???###");
         var name = eng.name().firstName();
@@ -16,7 +18,7 @@ public class DataGenerator {
         return new RegisterUser(email, password, name);
     }
 
-    public static Order getRandomOrder() {
+    public Order getRandomOrder() {
         Order order = new Order();
         Random random = new Random();
         Response response = UserClient.getIngredients();

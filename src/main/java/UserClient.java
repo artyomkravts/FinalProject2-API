@@ -2,16 +2,18 @@ import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import lombok.experimental.UtilityClass;
 import requestPOJOs.LoginUser;
 import requestPOJOs.Order;
 import requestPOJOs.RegisterUser;
 
 import static io.restassured.RestAssured.given;
 
+@UtilityClass
 public class UserClient {
 
     @Step("Register user")
-    public static Response registerUser(RegisterUser user) {
+    public Response registerUser(RegisterUser user) {
         return
                 RestAssured.given().log().all()
                         .contentType(ContentType.JSON)
@@ -22,7 +24,7 @@ public class UserClient {
     }
 
     @Step("Log in user")
-    public static Response logInUser(LoginUser loginUser) {
+    public Response logInUser(LoginUser loginUser) {
         return given().log().all()
                 .contentType(ContentType.JSON)
                 .and()
@@ -32,7 +34,7 @@ public class UserClient {
     }
 
     @Step("Patch user data")
-    public static Response patchUserData(RegisterUser user, String accessToken) {
+    public Response patchUserData(RegisterUser user, String accessToken) {
         return given().log().all()
                 .auth().oauth2(accessToken)
                 .contentType(ContentType.JSON)
@@ -43,7 +45,7 @@ public class UserClient {
     }
 
     @Step("Delete user")
-    public static Response deleteUser(String accessToken) {
+    public Response deleteUser(String accessToken) {
         return given().log().all()
                 .auth().oauth2(accessToken)
                 .when()
@@ -51,7 +53,7 @@ public class UserClient {
     }
 
     @Step("Get access token without 'Bearer ' part")
-    static String getAccessTokenWithoutBearer(Response response) {
+    public String getAccessTokenWithoutBearer(Response response) {
         String accessToken = response.then().log().all()
                 .extract()
                 .path("accessToken");
@@ -61,14 +63,14 @@ public class UserClient {
     }
 
     @Step("Get ingredients")
-    public static Response getIngredients() {
+    public Response getIngredients() {
         return given().log().all()
                 .when()
                 .get(Constants.BASE_URI + Constants.INGREDIENTS_PATH);
     }
 
     @Step("Create order")
-    public static Response createOrder(Order order, String accessToken) {
+    public Response createOrder(Order order, String accessToken) {
         return given().log().all()
                 .auth().oauth2(accessToken)
                 .contentType(ContentType.JSON)
@@ -79,7 +81,7 @@ public class UserClient {
     }
 
     @Step("Get order by access token")
-    public static Response getOrder(String accessToken) {
+    public Response getOrder(String accessToken) {
         return given().log().all()
                 .auth().oauth2(accessToken)
                 .when()

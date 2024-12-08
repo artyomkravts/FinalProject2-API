@@ -23,10 +23,10 @@ public class OrderListValidAuth {
     @JsonProperty("name")
     public String name;
 
-    @JsonProperty("created_at")
+    @JsonProperty("createdAt")
     public Date createdAt;
 
-    @JsonProperty("updated_at")
+    @JsonProperty("updatedAt")
     public Date updatedAt;
 
     @JsonProperty("number")

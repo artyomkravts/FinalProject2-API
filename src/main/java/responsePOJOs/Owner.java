@@ -13,9 +13,9 @@ public class Owner {
     @JsonProperty("email")
     public String email;
 
-    @JsonProperty("created_at")
+    @JsonProperty("createdAt")
     public Date createdAt;
 
-    @JsonProperty("updated_at")
+    @JsonProperty("updatedAt")
     public Date updatedAt;
 }

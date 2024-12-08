@@ -1,11 +1,11 @@
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
-import org.junit.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import requestPOJOs.LoginUser;
 import requestPOJOs.RegisterUser;
 

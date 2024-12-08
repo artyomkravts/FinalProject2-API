@@ -2,9 +2,9 @@ import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import requestPOJOs.Order;
 import requestPOJOs.RegisterUser;
 
@@ -12,7 +12,7 @@ public class GetOrdersTest {
     private static RegisterUser user;
     private static String accessToken;
     private static Order order;
-    @Before
+    @BeforeEach
     public void setUp() {
         user = DataGenerator.getRandomRegisterUser();
 
@@ -25,7 +25,7 @@ public class GetOrdersTest {
         UserClient.createOrder(order, accessToken);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         Allure.parameter("user", user);
         Allure.parameter("order", order);

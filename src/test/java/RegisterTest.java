@@ -1,20 +1,22 @@
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
-import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import requestPOJOs.RegisterUser;
 
 public class RegisterTest {
     private RegisterUser user;
     private Response response;
-    @Before
+
+    @BeforeEach
     public void setUp() {
         user = DataGenerator.getRandomRegisterUser();
     }
-    @After
+
+    @AfterEach
     public void tearDown() {
         Allure.parameter("user", user);
 
@@ -54,5 +56,4 @@ public class RegisterTest {
 
         UserChecks.check403AndSuccessFalse(response);
     }
-
 }

@@ -1,14 +1,11 @@
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
-import io.qameta.allure.junit4.DisplayName;
+import org.junit.jupiter.api.DisplayName;
 import io.restassured.response.Response;
-import org.junit.After;
-import org.junit.Before;
-
-import org.junit.Rule;
-import org.junit.Test;
-
-import org.junit.rules.ErrorCollector;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Assertions;
 import requestPOJOs.LoginUser;
 import requestPOJOs.RegisterUser;
 
@@ -16,18 +13,19 @@ public class ChangeUserDataTest {
     private static RegisterUser user;
     private static String accessToken;
 
-    // Правила привязаны к тестовому классу, поэтому проверки с коллектором неудобно выносить в другие классы
-    @Rule
-    public ErrorCollector collector = new ErrorCollector();
+    // Правила привязаны к тестовому классу, поэтому проверки с коллектором неудобно выносить в другие классы -- для JUnit 4
+//    @Rule
+//    public ErrorCollector collector = new ErrorCollector();
 
-    @Before
+
+    @BeforeEach
     public void setUp() {
         Response response = UserClient.registerUser(DataGenerator.getRandomRegisterUser());
 
         accessToken = UserClient.getAccessTokenWithoutBearer(response);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         Allure.parameter("user", user.toString());
         Allure.parameter("accessToken", accessToken);
@@ -44,7 +42,7 @@ public class ChangeUserDataTest {
         Response response = UserClient.patchUserData(user, accessToken);
 
         // Использую Soft Assertion, потому что нужно проверить больше 1 поля
-        UserChecks.softCheckStatusOkAndEmailAndNameMatchUserData(collector, response, user.getEmail(), user.getName());
+        UserChecks.softCheckStatusOkAndEmailAndNameMatchUserData(response, user.getEmail(), user.getName());
     }
 
     @Test
@@ -55,11 +53,11 @@ public class ChangeUserDataTest {
 
         Response response = UserClient.patchUserData(user, accessToken);
 
-        UserChecks.softCheck200AndStatusSuccess(collector, response);
+        UserChecks.softCheck200AndStatusSuccess(response);
 
         Response response1 = UserClient.logInUser(new LoginUser(user.getEmail(), user.getPassword()));
 
-        UserChecks.softCheck200AndStatusSuccess(collector, response1);
+        UserChecks.softCheck200AndStatusSuccess(response1);
     }
 
     @Test

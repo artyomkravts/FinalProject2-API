@@ -3,7 +3,7 @@ import io.restassured.response.Response;
 
 import lombok.experimental.UtilityClass;
 import org.hamcrest.Matchers;
-import org.junit.rules.ErrorCollector;
+import org.junit.jupiter.api.Assertions;
 import requestPOJOs.RegisterUser;
 
 import static java.net.HttpURLConnection.*;
@@ -88,15 +88,19 @@ public class UserChecks {
     }
 
     @Step("Check 1) status code 200; 2) email matches user data; 3) name matches user data")
-    public void softCheckStatusOkAndEmailAndNameMatchUserData(ErrorCollector collector, Response response, String email, String name) {
-        collector.checkThat("Status code is incorrect", response.getStatusCode(), is(HTTP_OK));
-        collector.checkThat("Email is incorrect", response.path("user.email"), is(email));
-        collector.checkThat("Name is incorrect", response.path("user.name"), is(name));
+    public void softCheckStatusOkAndEmailAndNameMatchUserData(Response response, String email, String name) {
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(HTTP_OK, response.getStatusCode(), "Status code is incorrect"),
+                () -> Assertions.assertEquals(email, response.path("user.email"), "Email is incorrect"),
+                () -> Assertions.assertEquals(name, response.path("user.name"), "Name is incorrect")
+        );
     }
 
     @Step("Check 1) status code 200; 2) response message - success: true")
-    public void softCheck200AndStatusSuccess(ErrorCollector collector, Response response) {
-        collector.checkThat("Status code is not 200", response.getStatusCode(), is(HTTP_OK));
-        collector.checkThat("Success =/= true", response.path("success"), is(true));
+    public void softCheck200AndStatusSuccess(Response response) {
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(HTTP_OK, response.getStatusCode(), "Status code is not 200"),
+                () -> Assertions.assertTrue(response.path("success"), "Success =/= true")
+        );
     }
 }

@@ -1,9 +1,6 @@
 import io.qameta.allure.Allure;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.*;
 import requestPOJOs.Order;
 import requestPOJOs.RegisterUser;
 import responsePOJOs.Ingredient;
@@ -12,6 +9,7 @@ import responsePOJOs.OrderResponseValidAuth;
 import java.util.List;
 
 // Тесты с корректной авторизацией
+@Tag("createOrder")
 public class CreateOrderDeeperTest {
     private static Order order;
     private static String accessToken;

@@ -1,6 +1,6 @@
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
-import io.qameta.allure.junit4.DisplayName;
+import org.junit.jupiter.api.DisplayName;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;

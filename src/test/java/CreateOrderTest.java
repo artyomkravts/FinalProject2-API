@@ -1,15 +1,13 @@
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
-import io.qameta.allure.junit4.DisplayName;
+import org.junit.jupiter.api.DisplayName;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.*;
 import requestPOJOs.Order;
 import requestPOJOs.RegisterUser;
 
 import java.util.ArrayList;
-
+@Tag("createOrder")
 public class CreateOrderTest {
     private static RegisterUser user;
     private static Order order;

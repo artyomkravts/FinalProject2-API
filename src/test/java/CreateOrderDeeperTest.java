@@ -3,7 +3,6 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
 import requestPOJOs.Order;
 import requestPOJOs.RegisterUser;
-import responsePOJOs.Ingredient;
 import responsePOJOs.OrderResponseValidAuth;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 public class CreateOrderDeeperTest {
     private static Order order;
     private static String accessToken;
-    private static List<Ingredient> ingredients;
+
     @BeforeEach
     public void setUp() {
         RegisterUser user = DataGenerator.getRandomRegisterUser();
@@ -39,7 +38,7 @@ public class CreateOrderDeeperTest {
 
         OrderResponseValidAuth orderResponseValidAuth = response.as(OrderResponseValidAuth.class);
 
-        ingredients = orderResponseValidAuth.getOrder().getIngredients();
+        List<OrderResponseValidAuth.OrderListValidAuth.Ingredient> ingredients = orderResponseValidAuth.getOrder().getIngredients();
 
         boolean allImagesArePng = ingredients.stream()
                 .map(ingredient -> ingredient.image)
